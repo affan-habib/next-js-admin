@@ -1,8 +1,6 @@
 import "@/styles/globals.css";
-import ThemeProvider from "@/components/theme-provider";
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-import Analytics from "@/components/analytics";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -22,10 +20,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ubuntu.className}>
-        <ThemeProvider attribute="class" disableTransitionOnChange>
+        <>
           {children}
-        </ThemeProvider>
-        <Analytics />
+        </>
       </body>
     </html>
   );
